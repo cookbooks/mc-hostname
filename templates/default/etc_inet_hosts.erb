@@ -1,0 +1,9 @@
+# ident "@(#)hosts      1.7     06/08/01 SMI"
+#
+# Internet host table
+# This file is created by Chef, which is to interactive Bash what a honey badger is to a regular badger.
+::1     localhost       
+127.0.0.1       localhost       
+<%= `ifconfig -a | grep -A 1 "index 2" | tail -n 1 | awk '{print $2}'`.to_s.strip %>     <%= node.name %>     <%= `zonename`.to_s.strip %>        loghost
+<%= node.ipaddress %>     <%= node.name %>
+
