@@ -16,11 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-case node.platform
+case node[:platform]
 when "debian","ubuntu"
   include_recipe "hostname::debian"
-when "solaris2", "smartos"
+when "solaris2"
   include_recipe "hostname::solaris"
+when "smartos"
+  include_recipe "hostname::smartos"
 else
   Chef::Log.error("The 'hostname' cookbook is not supported on this platform.")
 end

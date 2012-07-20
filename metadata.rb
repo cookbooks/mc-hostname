@@ -1,6 +1,6 @@
-maintainer       "YOUR_COMPANY_NAME"
-maintainer_email "YOUR_EMAIL"
+maintainer       "Modcloth"
+maintainer_email "platformsphere@modcloth.com"
 license          "All rights reserved"
-description      "Installs/Configures hostname"
+description      "Installs/Configures a hostname"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
-version          "0.1.3"
+version          "0.2.0"

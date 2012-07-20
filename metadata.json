@@ -1,0 +1,29 @@
+{
+  "license": "All rights reserved",
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "conflicting": {
+  },
+  "dependencies": {
+  },
+  "providing": {
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "description": "Installs/Configures hostname",
+  "recipes": {
+  },
+  "replacing": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.2",
+  "maintainer_email": "YOUR_EMAIL",
+  "groupings": {
+  },
+  "recommendations": {
+  },
+  "name": "hostname",
+  "attributes": {
+  },
+  "suggestions": {
+  }
+}
