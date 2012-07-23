@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: hostname
-# Recipe:: default
+# Recipe:: windows
 #
 # Copyright 2011, ModCloth, Inc.
 #
@@ -16,15 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-case node[:platform]
-when "debian","ubuntu"
-  include_recipe "hostname::debian"
-when "solaris2"
-  include_recipe "hostname::solaris"
-when "smartos"
-  include_recipe "hostname::smartos"
-when "winows"
-  include_recipe "hostname::windows"
-else
-  Chef::Log.error("The 'hostname' cookbook is not supported on this platform.")
+
+powershell "set hostname" do
+  code <<-EOH
+  $new_name = '#{node.windows_hostname}'
+  $sys_info = Get-WmiObject -Class Win32_ComputerSystem
+  $sys_info.Rename($new_name)
+  EOH
 end
