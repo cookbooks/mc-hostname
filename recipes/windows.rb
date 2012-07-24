@@ -16,9 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# XXX Requires you to explicitly include `recipe[powershell::default]`
+# XXX elsewhere in your run_list
 powershell "set hostname" do
   code <<-EOH
-  $new_name = '#{node.windows_hostname}'
+  $new_name = '#{node['windows_hostname']}'
   $sys_info = Get-WmiObject -Class Win32_ComputerSystem
   $sys_info.Rename($new_name)
   EOH
